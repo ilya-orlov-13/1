@@ -117,9 +117,124 @@ a=2 b=15 num=33
             }
         }
 ```
+
 <img width="161" height="120" alt="1 7 1" src="https://github.com/user-attachments/assets/524bd4d4-32f5-4d68-af3d-2f84df9ab742" />
 <img width="170" height="87" alt="1 7 2" src="https://github.com/user-attachments/assets/79fe14ba-9e11-47f2-9dd6-0c686166d506" />
 
 
 
+1.9
+Равенство.  
+Дана сигнатура метода: public bool isEqual(int a, int b, int c); 
+Необходимо реализовать метод таким образом, чтобы он возвращал true, если 
+все три полученных методом числа равны 
+ 
+Пример 1: 
+a=3 b=3 с=3 
+результат: true 
+ 
+Пример 2: 
+a=2 b=15 с=2 
+результат: false 
+
+
+```
+   public bool isEqual(int a, int b, int c)
+        {
+            if (a == b && a == c) return true;
+            else return false;
+        }
+```
+
+<img width="162" height="84" alt="1 9 1" src="https://github.com/user-attachments/assets/06ab1daf-398c-46fa-a9c2-3925311ccfb3" />
+<img width="143" height="88" alt="1 9 2" src="https://github.com/user-attachments/assets/d1b9726a-8058-4b79-81a5-f4dd55b82361" />
+<img width="151" height="151" alt="1 9 3" src="https://github.com/user-attachments/assets/2d6862a4-0ef4-4808-a0a4-914488a92e2f" />
+
+
+
+2.1
+Модуль числа.  
+Дана сигнатура метода: public int abs (int x); 
+Необходимо реализовать метод таким образом, чтобы он возвращал модуль 
+числа х (если оно было положительным, то таким и остается, если он было 
+отрицательным – то необходимо вернуть его без знака минус). 
+ 
+Пример 1: 
+x=5 
+результат: 5 
+ 
+Пример 2: 
+x=-3 
+результат: 3 
+
+```
+   public int abs(int x)
+        {
+            if (x > 0) return x;
+            else return x * -1;
+        }
+
+```
+<img width="134" height="89" alt="2 1 1" src="https://github.com/user-attachments/assets/0831996f-5b2b-4d39-917d-dbd10774fc34" />
+<img width="127" height="56" alt="2 1 2" src="https://github.com/user-attachments/assets/196280cb-9d87-41df-a332-3804194026e4" />
+
+
+
+2.3
+Тридцать пять.  
+Дана сигнатура метода: public bool is35 (int x); 
+Необходимо реализовать метод таким образом, чтобы он возвращал true, если 
+число x делится нацело на 3 или 5. При этом, если оно делится и на 3, и на 5, то 
+вернуть надо false. Подсказка: оператор % позволяет получить остаток от 
+деления. 
+ 
+Пример 1: 
+x=5 
+результат: true 
+ 
+Пример 2: 
+x=8  
+результат: false 
+ 
+Пример 3: 
+x=15 
+результат: false 
+
+```
+   public bool is35(int x)
+        {
+            if (x % 3 == 0 && x % 5 == 0) return false;
+            if (x % 3 == 0 || x % 5 == 0) return true;
+            else return false;
+        }
+```
+
+<img width="122" height="56" alt="2 3 1" src="https://github.com/user-attachments/assets/36a3e9dd-c721-4aae-a8e4-835ce2bcc98e" />
+<img width="133" height="56" alt="2 3 2" src="https://github.com/user-attachments/assets/ec0f8474-4a2b-4b8c-9679-2f37093d9bb7" />
+
+
+
+2.5
+Тройной максимум.  
+Дана сигнатура метода: public int max3 (int x, int y, int z); 
+Необходимо реализовать метод таким образом, чтобы он возвращал 
+максимальное из трех полученных методом чисел. Подсказка: идеальное 
+решение включает всего две инструкции if и не содержит вложенных if. 
+ 
+Пример 1: 
+x=5  y=7  z=7 
+результат: 7 
+ 
+Пример 2: 
+x=8  y=-1  z=4 
+результат: 8 
+
+```
+   public int max3(int x, int y, int z)
+        {
+            if (x >= y && x >= z) return x;
+            if (y >= x && y >= z) return y;
+            else return z;
+        }
+```
 
