@@ -17,9 +17,6 @@ public static class ConsoleValidator
         NoWhitespace = 16
     }
 
-    /// <summary>
-    /// Чтение и валидация символа с консоли
-    /// </summary>
     public static char ReadValidatedChar(string prompt, CharValidationOptions options = CharValidationOptions.None,
         params char[] allowedChars)
     {
@@ -44,13 +41,11 @@ public static class ConsoleValidator
 
                 char result = input[0];
 
-                // Применяем опцию IgnoreCase
                 if (options.HasFlag(CharValidationOptions.IgnoreCase))
                 {
                     result = char.ToUpperInvariant(result);
                 }
 
-                // Проверяем опции валидации
                 if (options.HasFlag(CharValidationOptions.LettersOnly) && !char.IsLetter(result))
                 {
                     Console.WriteLine("Ошибка: Требуется буква. Попробуйте снова.");
@@ -75,7 +70,6 @@ public static class ConsoleValidator
                     continue;
                 }
 
-                // Проверяем допустимые символы
                 if (allowedChars.Length > 0 && !allowedChars.Contains(result))
                 {
                     Console.WriteLine($"Ошибка: Символ должен быть одним из: {string.Join(", ", allowedChars)}. Попробуйте снова.");
@@ -149,9 +143,6 @@ public static class ConsoleValidator
         return ReadValidatedNumber<double>(prompt, min, max, allowIntegers);
     }
 
-    /// <summary>
-    /// Чтение и валидация целого числа с консоли
-    /// </summary>
     public static int ReadValidatedInt(string prompt, int min, int max)
     {
         return ReadValidatedNumber<int>(prompt, min, max, true);
