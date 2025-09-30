@@ -10,9 +10,10 @@ namespace ConsoleApp2
     {
         public double fraction(double x)
         {
-            int a = (int)x;
-            double b = x - a;
-            return b;
+            decimal decimalX = (decimal)x;
+            decimal integerPart = Math.Truncate(decimalX);
+            decimal fractionalPart = decimalX - integerPart;
+            return (double)fractionalPart;
         }
 
         public int charToNum(char x)
